@@ -1,5 +1,5 @@
-from .models import Todo, Comments
-from crud.settings import AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_STORAGE_BUCKET_NAME, AWS_S3_REGION_NAME
+from .models import Community, Comments
+from yeoun.settings import AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_STORAGE_BUCKET_NAME, AWS_S3_REGION_NAME
 import boto3
 from boto3.session import Session
 from datetime import datetime
