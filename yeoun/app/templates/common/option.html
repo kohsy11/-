@@ -9,28 +9,26 @@
 </head>
 <body>
     <p class='edit'>보정을 원해요</p>
-    <select name = 'edit'>
+    <select name = 'option1'>
         <option>볼륨있는 힙</option>
         <option>사이즈 업</option>
         <option>작은 키가 고민인</option>
         <option>와이존 완벽커버</option>
     </select>
     <p class='fuction'>기능을 원해요</p>
-    <select name = 'edit'>
+    <select name = 'option2'>
         <option>가벼운</option>
         <option>보송보송한</option>
         <option>시원한 쿨링</option>
         <option>바람 솔솔</option>
     </select>
-    <p>어떤 색깔을 선호하시나요?</p>
-        <button type='button' class = 'black'></button>
-        <button type='button' class= 'white'></button>
-        <button type='button' class = 'red'></button>
-        <button type='button' class= 'blue'></button>
-        <button type='button' class= 'gray'></button>
-        
-    <a href="{% url 'index'%}">
+    <p name = 'option3'>어떤 색깔을 선호하시나요?</p>
+        <button type='button' class = 'black' value="black"></button>
+        <button type='button' class= 'white' value="white"></button>
+        <button type='button' class = 'red' value="red"></button>
+        <button type='button' class= 'blue' value="blue"></button>
+        <button type='button' class= 'gray' value="gray"></button>
+
         <button type="submit">제출하기</button>
-    </a>
 </body>
 </html>
