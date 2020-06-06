@@ -42,13 +42,10 @@ def registration(request):
 
 def index(request):
     options = list(Option.objects.filter(user_id=request.user.pk))
-    print(request.user)
     latest_option = options[len(options)-1]
-    print(latest_option.option1)
     option_1 = latest_option.option1
     option_2 = latest_option.option2
     sorted_leggings = Leggings.objects.filter(feature=option_1,color=option_2)
-    print(list(sorted_leggings))
     return render(request, 'index.html',{"sorted_leggings" : sorted_leggings})
 
 def option(request):
@@ -107,6 +104,15 @@ def mypage(request, mykey):
     return render(request, 'mypage.html', {'mystyles' : mystyles , 'posts':posts} )
 
 def search_option(request):
-    return(render, "index.html")
+    if request.method == 'POST':
+        Option.objects.create(
+            option1 = request.POST['option1'],
+            option2 = request.POST['option2'],
+            user = request.user,
+        )
+        return redirect('search_option')
+    return render(request, 'common/option.html')
 
 
+def search_result(request):
+    pass
