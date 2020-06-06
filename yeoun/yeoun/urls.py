@@ -29,6 +29,7 @@ urlpatterns = [
     path('com_list', views.com_list, name = 'com_list'),
     path('com_detail', views.com_detail, name = 'com_detail'),
     path('com_new', views.com_new, name = 'com_new'),
+    path('mypage', views.mypage, name = 'mypage'),
 
 
     

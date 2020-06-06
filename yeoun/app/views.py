@@ -45,13 +45,11 @@ def index(request):
 
 def option(request):
     if request.method == 'POST':
-        option = Option.objects.create(
+        Option.objects.create(
             option1 = request.POST['option1'],
             option2 = request.POST['option2'],
-            option3 = request.POST['option3'],
             user = request.user,
         )
-        print(option)
         return redirect('index')
     return render(request, 'common/option.html')
 
@@ -88,5 +86,14 @@ def com_new(request):
         )
         return redirect('detail', new_post.pk)
     return render(request, 'com_new.html')
+
+def mypage(request, key):
+    if request.method == 'POST':
+        option = Option.objects.filter(user = request.user).update(
+            option1 = request.POST['option1'],
+            option2 = request.POST['option2'],
+        )
+        return redirect('mypage')
+    return render(request, 'mypage.html', {'option' : option } )
 
 
