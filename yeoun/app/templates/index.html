@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
 {% block title %} Yeoun {% endblock %}
-{% block content %}
-{% endblock %}
+{% block content %} {% endblock %}
+{% for leggings in sorted_leggings%}
+{{ leggings.title}}
+{% endfor %}
