@@ -19,7 +19,7 @@ def login(request):
             return render(request, 'common/login.html', {'error': error})
             
         auth.login(request, found_user, backend = 'django.contrib.auth.backends.ModelBackend')
-        return redirect(request.GET.get('/next', '/option'))
+        return redirect('option')
     return render(request, 'common/login.html')
 
 def start(request):
@@ -78,6 +78,8 @@ def com_detail(request, key):
         print(option)
         return redirect('com_detail', key)
     return render(request, 'com_detail.html', {'post' : post})
+def search_option(request):
+    return(render, "index.html")
 
 @login_required(login_url = '/common/registration')
 def com_new(request):
@@ -89,7 +91,7 @@ def com_new(request):
             author = request.user,
             img = upload_and_save(request, file_to_upload)
         )
-        return redirect('detail', new_post.pk)
+        return redirect('com_detail', new_post.pk)
     return render(request, 'com_new.html')
 
 def mypage(request, mykey):

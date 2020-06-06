@@ -33,6 +33,4 @@ urlpatterns = [
     path('search_option', views.search_option, name = 'search_option'),
     path('search_result', views.search_result, name ="search_result"),
 
-
-    
 ]

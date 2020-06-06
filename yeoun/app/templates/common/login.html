@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
     <title>Login</title>
 </head>
+
 <body>
     <div class='login'>
         <div class='title'>
-            Login
+            <p>Login</p>
         </div>
-        <form method = "POST">
+        <form method="POST">
             {% csrf_token %}
-            <input type = 'text' name = 'username' placeholder = 'ID'>
-            <input type = 'text' name = 'password' placeholder = 'Password'>
-            <button type = 'submit' class = 'button-l'> 로그인 </button>
+            <div class="enter">
+                <input type='text' name='username' placeholder='아이디' style="border-radius: 20px;"><br>
+                <input type='text' name='password' placeholder='비밀번호' style="border-radius: 20px;">
+            </div>
+            <div class="s-button">
+                <button type='submit' style="background-color: rgb(255,52,120);"> 로그인 </button>
+            </div>
         </form>
-        <div class = 'title'>
-           <a href = "{% url 'registration' %}">회원가입</a>
+        <div class="selectchange">
+            <div class="change">
+                <div class="firstchange">
+                    <a href="{% url 'login' %}" style="color: black;">로그인</a>
+                </div>
+                <div class="secondchange">
+                    <a href="{% url 'registration' %}" style="color: black;">회원가입</a>
+                </div>
+            </div>
         </div>
     </div>
     {% if error %}
-    <h3 style = 'color: red;'> {{error}} </h3>
-    {% endif %}  
+    <h3 style='color: red;'> {{error}} </h3>
+    {% endif %}
 </body>
-</html>
 
+</html>
