@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    {% block head %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
@@ -11,16 +15,24 @@
     <footer>
         <div class = 'nav-bar'>
             <div class = 'nav-item'>
-                홈
+                <a href="{% url 'index' %}">
+                    <span class="material-icons">home</span>
+                </a>
             </div>
             <div class = 'nav-item'>
-                카테고리
+                <a href="{% url 'search_option' %}">
+                    <span class="material-icons">search</span>
+                </a>                        
             </div>
             <div class = 'nav-item'>
-                커뮤니티
+                <a href="{% url 'com_list' %}">
+                    <span class="material-icons">list</span>
+                </a>
             </div>
             <div class = 'nav-item'>
-                마이페이지
+                <a href="{% url 'mypage' %}">
+                    <span class="material-icons">person</span>
+                </a>
             </div>
         </div>
     </footer>
