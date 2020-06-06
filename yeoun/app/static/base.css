@@ -1,5 +1,7 @@
 html {
     font-size: 62.5%;
+    width: 375px;
+    height: 812px;
 }
 
 .nav-bar {
