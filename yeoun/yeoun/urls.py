@@ -30,6 +30,7 @@ urlpatterns = [
     path('com_detail/<int:key>', views.com_detail, name = 'com_detail'),
     path('com_new', views.com_new, name = 'com_new'),
     path('mypage/<int:mykey>', views.mypage, name = 'mypage'),
+    path('search_option', views.search_option, name = 'search_option'),
 
 
     

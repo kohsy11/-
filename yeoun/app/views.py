@@ -88,7 +88,7 @@ def com_new(request):
     return render(request, 'com_new.html')
 
 def mypage(request, mykey):
-    mystyle = Option.objects.get(user = request.user)
+    mystyles = Option.objects.filter(user = request.user)
     posts = Community.objects.filter(author = request.user)
     if request.method == 'POST':
         Option.objects.filter(user = request.user).update(
@@ -96,6 +96,9 @@ def mypage(request, mykey):
             option2 = request.POST['option2'],
         )
         return redirect('mypage')
-    return render(request, 'mypage.html', {'mystyle' : mystyle , 'posts':posts} )
+    return render(request, 'mypage.html', {'mystyles' : mystyles , 'posts':posts} )
+
+def search_option(request):
+    return(render, "index.html")
 
 

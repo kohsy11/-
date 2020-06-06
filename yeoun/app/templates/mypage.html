@@ -10,9 +10,9 @@
 </div>
 <div class = 'mypage_block'>
     <p>내 스타일</p>
-    {% for mystyle in mystyle %}
-        {{% mystyle.option1 %}}
-        {{% mystyle.option2 %}}
+    {% for mystyle in mystyles %}
+        {{ mystyle.option1 }}
+        {{ mystyle.option2 }}
     {% endfor %}
 </div>
 <div class= 'mypage_block'>
