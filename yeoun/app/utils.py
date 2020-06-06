@@ -6,7 +6,6 @@ from datetime import datetime
 from django.contrib.auth.models import User
 
 def upload_and_save(request, file_to_upload):
-    # user = Todo.objects.get(author=request.user)
     session = Session(
             aws_access_key_id = AWS_ACCESS_KEY_ID,
             aws_secret_access_key = AWS_SECRET_ACCESS_KEY,
@@ -22,7 +21,7 @@ def upload_and_save(request, file_to_upload):
     )
 
     
-    s3_url = 'https://seoyoung-django.s3.ap-northeast-2.amazonaws.com/'
+    s3_url = 'https://yeoun.s3.ap-northeast-2.amazonaws.com/'
     img_url = s3_url+ key + '/' + now +file_to_upload.name
 
     return img_url
