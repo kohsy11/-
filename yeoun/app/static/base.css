@@ -4,12 +4,27 @@ html {
     height: 812px;
 }
 
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0rem;
+    width: 100%;
+    height: 7rem;
+}
+
 .nav-bar {
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+}
+
+span {
+    color: rgb(255,52,120);
 }
