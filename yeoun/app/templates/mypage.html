@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} My Page {% endblock %}
+{% block content %}
+<p> 마이페이지 </p>
+<div class = 'mypage_block'>
+    <p>내 게시물</p>
+    {% for post in posts %}
+        <a href = "{% url 'com_detail' post.pk %}" style = 'color:black;'> {{post.title}} </a>
+    {% endfor %}
+</div>
+<div class = 'mypage_block'>
+    <p>내 스타일</p>
+    {% for mystyle in mystyles %}
+        {{ mystyle.option1 }}
+        {{ mystyle.option2 }}
+    {% endfor %}
+</div>
+<div class= 'mypage_block'>
+    <p>내 스타일 바꾸기</p>
+        <form method = 'POST'>
+            {% csrf_token %}
+            <select name='option1'>
+            <option value="hipup">볼륨있는 힙</option>
+            <option value="bigsize">사이즈 업</option>
+            <option value="shortheight">작은 키가 고민인</option>
+            <option value="yzone">와이존 완벽커버</option>
+            </select>
+            <p>어떤 색깔을 선호하시나요?</p>
+            <select name = 'option2'>
+            <option class = 'black' value="black"></option>
+            <option class= 'yellow' value="yellow"></option>
+            <option class = 'red' value="red"></option>
+            <option class= 'blue' value="blue"></option>
+            <option class= 'gray' value="gray"></option>
+            <input type="submit" value="submit">제출하기</button>
+        </form>
+</div>
+{% endblock %}

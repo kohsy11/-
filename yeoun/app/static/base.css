@@ -1,0 +1,15 @@
+html {
+    font-size: 62.5%;
+    width: 375px;
+    height: 812px;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
