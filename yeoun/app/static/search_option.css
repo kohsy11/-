@@ -2,66 +2,66 @@ html {
     width: 375px;
     height: 812px;
     font-size: 62.5%;
-}
-
-body {
+  }
+  
+  body {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0,0,0,0.03);
-}
-
-.content {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  
+  .content {
     background-color: white;
     border-radius: 2rem;
     box-sizing: border-box;
     padding: 8rem 4rem;
-    box-shadow: 0 0.5rem 0.5rem 0 rgba(0,0,0,0.1);
-}
-
-.styletitle {
+    box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .styletitle {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-p {
+  }
+  
+  p {
     margin: 0;
     font-size: 2rem;
     font-weight: 700;
-}
-
-form {
+  }
+  
+  form {
     margin: 2rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.styleoption select {
+  }
+  
+  .styleoption select {
     border: none;
-    box-shadow: 0 0.5rem 0.5rem 0 rgba(0,0,0,0.1);
+    box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1);
     height: 4rem;
     margin: 1rem 0;
     width: 25rem;
     box-sizing: border-box;
     padding: 0 2rem;
     margin-bottom: 8rem;
-}
-
-button {
+  }
+  
+  button {
     padding: 0px;
-}
-
-input {
+  }
+  
+  input {
     border: none;
-    box-shadow: 0 0.5rem 0.5rem 0 rgba(0,0,0,0.1);
+    box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1);
     margin: 2rem 0;
     width: 20rem;
     box-sizing: border-box;
@@ -71,38 +71,38 @@ input {
     color: white;
     font-size: 2rem;
     font-weight: 700;
-}
-
-.coloroption select {
+  }
+  
+  .coloroption select {
     margin-right: 2rem;
-}
-.black {
+  }
+  .black {
     height: 15px;
     width: 15px;
     background-color: black;
     border-radius: 15px;
-}
-.blue {
+  }
+  .blue {
     height: 15px;
     width: 15px;
     background-color: lightskyblue;
     border-radius: 15px;
-}
-.red {
+  }
+  .red {
     height: 15px;
     width: 15px;
     background-color: lightpink;
     border-radius: 15px;
-}
-.yellow {
+  }
+  .yellow {
     height: 15px;
     width: 15px;
     background-color: yellow;
     border-radius: 15px;
-}
-.gray {
+  }
+  .gray {
     height: 15px;
     width: 15px;
     background-color: gray;
     border-radius: 15px;
-}
+  }

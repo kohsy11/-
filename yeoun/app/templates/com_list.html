@@ -1,26 +1,29 @@
 {% extends 'base.html' %}
 {% block title %} Community {% endblock %}
 {% block content %}
-<div class = 'list_b'>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'com_list.css' %}">
+
+<div class='title_a'>
+    <p class='ti'># 여운 게시물</p>
+</div>
+
+
+<div class = 'list_a'>
     {% for post in posts %}
+
     <div class = 'list'>
-        <div class = 'list_t'>
+        <div class = 'title'>
             <a href = "{% url 'com_detail' post.pk %}" style = 'color:black;'> {{post.title}} </a>
-        </div>
-        <div class = 'list_c'>
-            {{post.author}}
-            {{post.img}}
+            <p>{{post.author}} 의 게시물 </p>
         </div>
     </div>
     {% endfor %}
-    {% for post in posts %}
-    <div>
-        <h3>{{ post.title }}</h3>
-        <img src="{{ post.img }}" alt="{{ post.title}}">
+  
+    
+    <div class= 'list_c'>
+        <a href="{% url 'com_new' %}">작성하기</a>
     </div>
-    {% endfor %}
 </div>
-<div class= 'list_b'>
-    <a href="{% url 'com_new' %}">작성하기</a>
-</div>
+
 {% endblock %}

@@ -1,0 +1,53 @@
+* {
+    font-size: 1.5rem;
+}
+
+button{
+    box-sizing: border-box;
+    padding: 0.7rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    width: 15rem;
+    background-color: rgb(255, 52, 120);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.16);
+    color: white;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.t {
+    border: none;
+    box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+    height: 4rem;
+    margin: 1rem 0;
+    width: 25rem;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    border-radius: 2rem;
+}
+
+.title_b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filebox input[type="file"] {
+    border: 0;
+}
+
+.save {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

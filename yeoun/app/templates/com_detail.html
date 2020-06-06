@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 {% block title %} Yeoun {% endblock %}
 {% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'com_detail.css' %}">
+<div class="title">
+    <p class="title"># 게시글</p>
+</div>
 <div class = 'detail_box'>
     <div class = 'detail_t'>
         {{post.title}}
     </div>
-    <div class = 'detail'>
-        {{post.content}}
-    </div>
-    <div class = 'detail_d'>
-        Due {{post.due}}
-    </div>
     <div class = 'detail_d'>
         <img src ="{{post.img}}" width="300px" height="300px"/>
+    </div>
+    <div class = 'detail'>
+        {{post.content}}
     </div>
 </div>
 <div class = 'comment'>

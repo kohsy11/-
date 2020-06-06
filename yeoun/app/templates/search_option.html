@@ -1,8 +1,36 @@
-{% extends 'base.html %}
-{% block title %} Category {% endblock %}
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Option {% endblock %}
 {% block content %}
-<form>
+    <link rel="stylesheet" type="text/css" href="{% static 'search_option.css' %}">
+    <div class="content">
+        <div class="styletitle">
+            <p>당신이 원하는 스타일을</p>
+            <p>골라보세요</p>
+        </div>
+        <div class="stylecontent">
+            <form method='POST'>
+                {% csrf_token %}
+                <div class="styleoption">
+                    <select name='option1' style="border-radius: 20px;">
+                        <option value="hipup">볼륨있는 힙</option>
+                        <option value="bigsize">사이즈 업</option>
+                        <option value="shortheight">작은 키가 고민인</option>
+                        <option value="yzone">와이존 완벽커버</option>
+                    </select>
+                </div>
+                <div class="coloroption">
+                    <p>어떤 색깔을 선호하시나요?</p>
+                    <select name='option2' style="border-radius: 20px;">
+                        <option class='black' value="black"></option>
+                        <option class='yellow' value="yellow"></option>
+                        <option class='red' value="red"></option>
+                        <option class='blue' value="blue"></option>
+                        <option class='gray' value="gray"></option>
+                        <input type="submit" value="제출하기" style="background-color: rgb(255,52,120);"></button>
+                </div>
 
-</form>
-
+            </form>
+        </div>
+    </div>
 {% endblock %}

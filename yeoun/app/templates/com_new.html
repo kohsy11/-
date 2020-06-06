@@ -1,26 +1,44 @@
 {% extends 'base.html' %}
 {% block title %} Yeoun {% endblock %}
 {% block content %}
-<div class = 'title_b'>
-    <p class = 'title'>CREATE NEW</p>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'com_new.css' %}">
+
+
+<div class = 'title_a'>
+    <p class = 'title'># 글 작성하기</p>
 </div>
-<form method = 'POST' enctype="multipart/form-data">
-    {%csrf_token%}
-    <div class = 'new_box'>
-        <div class = 'new'>
-            <p class = 'new_w'> TITLE </p>
-            <input type = 'text' name = 'title' placeholder='type in title'>
+
+<div class="title_b">
+
+    <form method = 'POST' enctype="multipart/form-data">
+        {%csrf_token%}
+
+        <div class = 'new_box'>
+
+            <div class = 'new'>
+                <p class = 'new_w'> TITLE </p>
+                <input class="t" type = 'text' name = 'title' placeholder='type in title'>
+            </div>
+
+            <div class='new'>
+                <p class = 'new_w'> DETAIL </p>
+                <input class="t" type = 'text' name ='content' placeholder= 'type in content'>
+            </div>
+
+            <div class = 'filebox'>
+                <p class = 'new_w'> IMAGES </p>
+                <input style="font-size: 1rem;" type='file' name='img'>
+            </div>
+
         </div>
-        <div class='new'>
-            <p class = 'new_w'> DETAIL </p>
-            <input type = 'text' name ='content' placeholder= 'type in content'>
+
+        <div class="save">
+            <button style="margin-top: 2rem;" class='button' type='submit'> SAVE </button>
         </div>
-        <div class = 'new'>
-            <p class = 'new_w'> IMAGES </p>
-                <input type = 'text' name = 'img_title'>
-                <input type = 'file' name = 'img'> 
-        </div>
-    </div>
-    <button class= 'button' type='submit'> SAVE </button>
-</form>
+
+    </form>
+
+</div>
+
 {% endblock %}

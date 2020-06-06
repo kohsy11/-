@@ -1,6 +1,50 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %} Yeoun {% endblock %}
-{% block content %} {% endblock %}
-{% for leggings in sorted_leggings%}
-{{ leggings.title}}
-{% endfor %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+<div class="blank">
+    <div class="bold big title">여운</div>
+    <div class="small text">"운동에 여운을 남기다"</div>
+    <div class="bold middle text">
+        필터 옵션
+    </div>
+    <div class="option_container">
+        <div class="option">
+            {{ option_1 }}
+        </div>
+        <div class="option">
+            {{ option_2 }}
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="bold middle text">
+        당신을 위한 추천 아이템
+    </div>
+    <div class="box">
+        {% for leggings in sorted_leggings%}
+        <div class="container">
+            <div>
+                <a href="{{ leggings.link }}" target="_blank"><img class="item_image" src="{{ leggings.img_src }}"></a>
+            </div>
+            <div class="bold">
+                {{ leggings.title}}
+            </div>
+            <div>
+                {{ leggings.provider}}
+            </div>
+            <div>
+                {{ leggings.price}}원
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

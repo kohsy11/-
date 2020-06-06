@@ -1,15 +1,36 @@
 html {
+
     font-size: 62.5%;
     width: 375px;
     height: 812px;
+
+}
+* {
+    font-family: sans-serif;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
+  
+footer {
+    position: fixed;
+    bottom: 0rem;
+    width: 100%;
+    height: 6rem;
+    background-color: white;
+    box-shadow: 0 0.5rem 0.5rem 0 rgba(0,0,0,0.1);
 }
 
 .nav-bar {
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    background-color: white;
+}
+
+span {
+    color: rgb(255, 52, 120);
 }

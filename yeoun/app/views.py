@@ -41,12 +41,14 @@ def registration(request):
     return render(request, 'common/registration.html')
 
 def index(request):
-    options = list(Option.objects.filter(user=request.user))
+    options = list(Option.objects.filter(user_id=request.user.pk))
     latest_option = options[len(options)-1]
     option_1 = latest_option.option1
     option_2 = latest_option.option2
-    sorted_leggings = Leggings.objects.filter(feature=option_1).filter(feature=option_2)
-    return render(request, 'index.html',{"sorted_leggings" : sorted_leggings})
+    my_dict_1 = {"hipup":"#볼륨 있는 엉덩이", "bigsize":"#사이즈 업!", "shortheight":"#작은 키가 고민인", "yzone":"#와이존 완벽커버"}
+    my_dict_2 = {"red":"#분홍색", "blue":"#하늘색", "gray":"#회색", "black":"#검정색", "yellow":"#노란색"}
+    sorted_leggings = Leggings.objects.filter(feature=option_1,color=option_2)
+    return render(request, 'index.html',{"sorted_leggings" : sorted_leggings, "option_1" : my_dict_1[option_1], "option_2" : my_dict_2[option_2]})
 
 def option(request):
     if request.method == 'POST':
@@ -104,4 +106,23 @@ def com_detail(request, key):
         return redirect('com_detail', key)
     return render(request, 'com_detail.html', {'post' : post})
 
+def search_option(request):
+    if request.method == 'POST':
+        Option.objects.create(
+            option1 = request.POST['option1'],
+            option2 = request.POST['option2'],
+            user = request.user,
+        )
+        return redirect('search_result')
+    return render(request, 'search_option.html')
+
+def search_result(request):
+    options = list(Option.objects.filter(user_id=request.user.pk))
+    latest_option = options[len(options)-1]
+    option_1 = latest_option.option1
+    option_2 = latest_option.option2
+    my_dict_1 = {"hipup":"#볼륨 있는 엉덩이", "bigsize":"#사이즈 업!", "shortheight":"#작은 키가 고민인", "yzone":"#와이존 완벽커버"}
+    my_dict_2 = {"red":"#분홍색", "blue":"#하늘색", "gray":"#회색", "black":"#검정색", "yellow":"#노란색"}
+    sorted_leggings = Leggings.objects.filter(feature=option_1,color=option_2)
+    return render(request, 'search_result.html',{"sorted_leggings" : sorted_leggings, "option_1" : my_dict_1[option_1], "option_2" : my_dict_2[option_2]})
 
