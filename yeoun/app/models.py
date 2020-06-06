@@ -15,10 +15,9 @@ class Community(models.Model):
 class Comments(models.Model):
     post = models.ForeignKey(Community, on_delete=models.CASCADE, related_name = 'comments')
     comment = models.TextField()
-    author = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'comments', default = "")
+    user = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'comments', default = "")
 
 class Option(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'option')
     option1 = models.TextField()
     option2 = models.TextField()
-    option3 = models.TextField()
