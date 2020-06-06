@@ -4,18 +4,6 @@
 <div class = 'detail_box'>
     <div class = 'detail_t'>
         {{post.title}}
-        <div class = 'button_box'>
-            {% if user.is_authenticated and post.author.pk == user.pk %}
-            <div class = 'button'>
-                <a href = "{% url 'edit' todo.pk %}" style = 'color:black;'><span id = 'icon' class="material-icons">
-                    edit
-                    </span></a>
-            </div>
-            <div class = 'button'>
-                <a href = "{% url 'delete' post.pk %}" style = 'color:black;'><span class="material-icons" id = 'icon'>delete</span></a>
-            </div>
-            {% endif %}
-        </div>
     </div>
     <div class = 'detail'>
         {{post.content}}
@@ -34,11 +22,6 @@
             <div class = 'comment_word'>
                 {{comment.comment}}
             </div>
-            {% if user.is_authenticated and comment.author.pk == user.pk %}
-                <a href="{% url 'delete_comment' post.pk comment.pk %}">
-                    <span class="material-icons" id = 'icon' style = 'color:black;'>delete</span>
-                </a>
-            {% endif %}
         </div>
         {% endfor %}
     </div>
