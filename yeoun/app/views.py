@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
-from .models import Community, Comments
+from .models import Community, Comments, Option
 import datetime
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from .utils import upload_and_save
+
 # Create your views here.
 
 def login(request):
@@ -41,8 +42,19 @@ def registration(request):
 
 def index(request):
     return render(request, 'index.html')
+
 def option(request):
+    if request.method == 'POST':
+        option = Option.objects.create(
+            option1 = request.POST['option1'],
+            option2 = request.POST['option2'],
+            option3 = request.POST['option3'],
+            user = request.user,
+        )
+        print(option)
+        return redirect('index')
     return render(request, 'common/option.html')
+
 # def logout(request):
 #     auth.logout(request)
 #     return redirect('index')
@@ -60,7 +72,7 @@ def com_detail(request, key):
             comment = request.POST['comment'],
             author = request.user
         )
-        
+        print(option)
         return redirect('com_detail', key)
     return render(request, 'com_detail.html', {'post' : post})
 
