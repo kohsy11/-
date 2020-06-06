@@ -1,4 +1,21 @@
 {% extends 'base.html' %}
-{% block title %} Yeoun {% endblock %}
+{% block title %} Login {% endblock %}
 {% block content %}
+<div class='login'>
+    <div class='title'>
+        Login
+    </div>
+    <form method = "POST">
+        {% csrf_token %}
+        <input type = 'text' name = 'username' placeholder = 'ID'>
+        <input type = 'text' name = 'password' placeholder = 'Password'>
+        <button type = 'submit' class = 'button-l'> 로그인 </button>
+    </form>
+    <div class = 'title'>
+       <a href = "{% url 'registration' %}">회원가입</a>
+    </div>
+</div>
+{% if error %}
+<h3 style = 'color: red;'> {{error}} </h3>
+{% endif %}
 {% endblock %}

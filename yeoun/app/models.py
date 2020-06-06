@@ -13,6 +13,6 @@ class Community(models.Model):
         return self.title
 
 class Comments(models.Model):
-    todo = models.ForeignKey(Community, on_delete=models.CASCADE, related_name = 'comments')
+    post = models.ForeignKey(Community, on_delete=models.CASCADE, related_name = 'comments')
     comment = models.TextField()
     author = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'comments', default = "")
