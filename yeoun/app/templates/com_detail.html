@@ -1,36 +1,36 @@
 {% extends 'base.html' %}
 {% block title %} Yeoun {% endblock %}
 {% block content %}
-<div class = 'detail_box'>
-    <div class = 'detail_t'>
+<div class='detail_box'>
+    <div class='detail_t'>
         {{post.title}}
     </div>
-    <div class = 'detail'>
+    <div class='detail'>
         {{post.content}}
     </div>
-    <div class = 'detail_d'>
+    <div class='detail_d'>
         Due {{post.due}}
     </div>
-    <div class = 'detail_d'>
-        <img src ="{{post.img}}" width="300px" height="300px"/>
+    <div class='detail_d'>
+        <img src="{{post.img}}" width="300px" height="300px" />
     </div>
 </div>
-<div class = 'comment'>
-    <div class = 'show_comment'>
+<div class='comment'>
+    <div class='show_comment'>
         {% for comment in post.comments.all %}
-        <div class = 'comment_list'>
-            <div class = 'comment_word'>
+        <div class='comment_list'>
+            <div class='comment_word'>
                 {{comment.comment}}
             </div>
         </div>
         {% endfor %}
     </div>
     {% if user.is_authenticated %}
-    <div class = 'type_comment'>
-        <form method = 'POST'>
+    <div class='type_comment'>
+        <form method='POST'>
             {% csrf_token %}
-            <input type = 'text' name = 'comment' placeholder = 'type in comments'>
-            <button type = 'submit'>COMMENT</button>
+            <input type='text' name='comment' placeholder='type in comments'>
+            <button type='submit'>COMMENT</button>
         </form>
     </div>
     {% endif %}

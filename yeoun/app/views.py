@@ -37,15 +37,15 @@ def registration(request):
             password = request.POST['password']
         )
         auth.login(request, new_user, backend = 'django.contrib.auth.backends.ModelBackend')
-        return redirect('index')
+        return redirect('option')
     return render(request, 'common/registration.html')
 
 def index(request):
-    options = list(Option.objects.filter(user=request.user))
+    options = list(Option.objects.filter(user_id=request.user.pk))
     latest_option = options[len(options)-1]
     option_1 = latest_option.option1
     option_2 = latest_option.option2
-    sorted_leggings = Leggings.objects.filter(feature=option_1).filter(feature=option_2)
+    sorted_leggings = Leggings.objects.filter(feature=option_1,color=option_2)
     return render(request, 'index.html',{"sorted_leggings" : sorted_leggings})
 
 def option(request):
@@ -62,6 +62,22 @@ def option(request):
 #     auth.logout(request)
 #     return redirect('index')
 
+def com_list(request):
+    posts = Community.objects.all()
+    return render(request, 'com_list.html', { 'posts' : posts })
+
+def com_detail(request, key):
+    post = Community.objects.get(pk = key)
+
+    if request.method == "POST":
+        Comments.objects.create(
+            post = post,
+            comment = request.POST['comment'],
+            author = request.user
+        )
+        print(option)
+        return redirect('com_detail', key)
+    return render(request, 'com_detail.html', {'post' : post})
 def search_option(request):
     return(render, "index.html")
 
@@ -89,19 +105,16 @@ def mypage(request, mykey):
         return redirect('mypage')
     return render(request, 'mypage.html', {'mystyles' : mystyles , 'posts':posts} )
 
-def com_list(request):
-    posts = Community.objects.all()
-    return render(request, 'com_list.html', { 'posts' : posts })
-
-def com_detail(request, key):
-    post = Community.objects.get(pk = key)
-    if request.method == "POST":
-        Comments.objects.create(
-            post = post,
-            comment = request.POST['comment'],
-            author = request.user
+def search_option(request):
+    if request.method == 'POST':
+        Option.objects.create(
+            option1 = request.POST['option1'],
+            option2 = request.POST['option2'],
+            user = request.user,
         )
-        return redirect('com_detail', key)
-    return render(request, 'com_detail.html', {'post' : post})
+        return redirect('search_option')
+    return render(request, 'common/option.html')
 
 
+def search_result(request):
+    pass

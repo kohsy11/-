@@ -1,91 +1,93 @@
 html {
-    width: 375px;
-    height: 812px;
-    font-size: 62.5%;
-    background-color: rgba(0,0,0,0.03);
+  width: 375px;
+  height: 812px;
+  font-size: 62.5%;
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .login {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 8rem 4rem;
-    box-shadow: 0 0.5rem 0.5rem 0 rgba(0,0,0,0.1);
-    border-radius: 2rem;
-    font-size: 2.5rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 8rem 4rem;
+  box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  font-size: 2.5rem;
 }
 
 .s-button {
-    margin: 1rem 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
-    border: none;
-    color: white;
-    box-sizing: border-box;
-    width: 25rem;
-    padding: 1rem;
-    border-radius: 2rem;
-    box-shadow: 0 0.5rem 0.5rem 0 rgba(0,0,0,0.1);
-    font-size: 1.5rem;
+  border: none;
+  color: white;
+  box-sizing: border-box;
+  width: 25rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
 }
 
 input {
-    border: none;
-    box-shadow: 0 0.5rem 0.5rem 0 rgba(0,0,0,0.1);
-    height: 4rem;
-    margin: 1rem 0;
-    width: 25rem;
-    box-sizing: border-box;
-    padding: 0 2rem;
+  border: none;
+  box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+  height: 4rem;
+  margin: 1rem 0;
+  width: 25rem;
+  box-sizing: border-box;
+  padding: 0 2rem;
 }
 
 .change {
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .firstchange {
-    border-right: 0.1rem black solid;
-    box-sizing: border-box;
-    padding: 0 1rem;
+  border-right: 0.1rem black solid;
+  box-sizing: border-box;
+  padding: 0 1rem;
 }
 
 .secondchange {
-    box-sizing: border-box;
-    padding: 0 1rem;
+  box-sizing: border-box;
+  padding: 0 1rem;
 }
 
 .selectchange {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 1rem 0;
 }
-.hello{}
-.world{}
+.hello {
+}
+.world {
+}

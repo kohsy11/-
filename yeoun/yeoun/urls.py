@@ -31,7 +31,6 @@ urlpatterns = [
     path('com_new', views.com_new, name = 'com_new'),
     path('mypage/<int:mykey>', views.mypage, name = 'mypage'),
     path('search_option', views.search_option, name = 'search_option'),
+    path('search_result', views.search_result, name ="search_result"),
 
-
-    
 ]

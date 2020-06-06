@@ -1,26 +1,26 @@
 {% extends 'base.html' %}
 {% block title %} Yeoun {% endblock %}
 {% block content %}
-<div class = 'title_b'>
-    <p class = 'title'>CREATE NEW</p>
+<div class='title_b'>
+    <p class='title'>CREATE NEW</p>
 </div>
-<form method = 'POST' enctype="multipart/form-data">
+<form method='POST' enctype="multipart/form-data">
     {%csrf_token%}
-    <div class = 'new_box'>
-        <div class = 'new'>
-            <p class = 'new_w'> TITLE </p>
-            <input type = 'text' name = 'title' placeholder='type in title'>
+    <div class='new_box'>
+        <div class='new'>
+            <p class='new_w'> TITLE </p>
+            <input type='text' name='title' placeholder='type in title'>
         </div>
         <div class='new'>
-            <p class = 'new_w'> DETAIL </p>
-            <input type = 'text' name ='content' placeholder= 'type in content'>
+            <p class='new_w'> DETAIL </p>
+            <input type='text' name='content' placeholder='type in content'>
         </div>
-        <div class = 'new'>
-            <p class = 'new_w'> IMAGES </p>
-                <input type = 'text' name = 'img_title'>
-                <input type = 'file' name = 'img'> 
+        <div class='new'>
+            <p class='new_w'> IMAGES </p>
+            <input type='text' name='img_title'>
+            <input type='file' name='img'>
         </div>
     </div>
-    <button class= 'button' type='submit'> SAVE </button>
+    <button class='button' type='submit'> SAVE </button>
 </form>
 {% endblock %}
