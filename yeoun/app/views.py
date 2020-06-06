@@ -78,8 +78,7 @@ def com_detail(request, key):
         print(option)
         return redirect('com_detail', key)
     return render(request, 'com_detail.html', {'post' : post})
-def search_option(request):
-    return(render, "index.html")
+
 
 @login_required(login_url = '/common/registration')
 def com_new(request):
@@ -105,6 +104,7 @@ def mypage(request, mykey):
         return redirect('mypage')
     return render(request, 'mypage.html', {'mystyles' : mystyles , 'posts':posts} )
 
+
 def search_option(request):
     if request.method == 'POST':
         Option.objects.create(
@@ -112,9 +112,16 @@ def search_option(request):
             option2 = request.POST['option2'],
             user = request.user,
         )
-        return redirect('search_option')
-    return render(request, 'common/option.html')
+        return redirect('search_result')
+    return render(request, 'search_option.html')
+
 
 
 def search_result(request):
-    pass
+    options = list(Option.objects.filter(user_id=request.user.pk))
+    latest_option = options[len(options)-1]
+    option_1 = latest_option.option1
+    option_2 = latest_option.option2
+    sorted_leggings = Leggings.objects.filter(feature=option_1,color=option_2)
+    return render(request, 'search_result.html',{"sorted_leggings" : sorted_leggings})
+
