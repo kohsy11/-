@@ -18,11 +18,11 @@ def login(request):
             return render(request, 'common/login.html', {'error': error})
             
         auth.login(request, found_user, backend = 'django.contrib.auth.backends.ModelBackend')
-        return redirect(request.GET.get('next', '/'))
+        return redirect(request.GET.get('next', '/option'))
     return render(request, 'common/login.html')
 
 def start(request):
-    return render(request, 'login.html')
+    return render(request, 'common/start.html')
 
 def registration(request):
     if request.method == 'POST':
@@ -41,7 +41,8 @@ def registration(request):
 
 def index(request):
     return render(request, 'index.html')
-
+def option(request):
+    return render(request, 'common/option.html')
 # def logout(request):
 #     auth.logout(request)
 #     return redirect('index')
