@@ -20,9 +20,17 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name = 'index'),
+    path('', views.start, name = 'start'),
+    path('index', views.index, name = 'index'),
+    path('option', views.option, name = 'option'),
     path('common/start', views.start, name = 'start'),
     path('common/login', views.login, name = 'login'),
+    path('common/registration', views.registration, name = 'registration'),
+    path('com_list', views.com_list, name = 'com_list'),
+    path('com_detail', views.com_detail, name = 'com_detail'),
+    path('com_new', views.com_new, name = 'com_new'),
+    path('mypage', views.mypage, name = 'mypage'),
+
 
     
 ]

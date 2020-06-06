@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <div class='detail_box'>
+        <div class='detail_t'>
+            회원가입
+        </div>
+    </div>
+    <div class='detail'>
+        <form method = "POST">
+            {% csrf_token %}
+            <input type = 'text' name = 'username' placeholder = 'ID'>
+            <input type = 'text' name = 'password' placeholder = 'Password'>
+            <button type = 'submit'> 가입하기 </button>
+        </form>
+    </div>
+    {% if error %}
+    <h3 style = 'color: red;'> {{error}} </h3>
+    {% endif %}
+    
+</body>
+</html>

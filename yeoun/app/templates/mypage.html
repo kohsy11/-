@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
-    <title>Option</title>
-</head>
-<body>
-    <p>보정을 원해요</p>
+{% extends 'base.html' %}
+{% block title %} Yeoun {% endblock %}
+{% block content %}
+<p>내 스타일 바꾸기</p>
     <form method = 'POST'>
         {% csrf_token %}
         <select name='option1'>
@@ -26,5 +19,4 @@
         <option class= 'gray' value="gray"></option>
         <input type="submit" value="submit">제출하기</button>
     </form>
-</body>
-</html>
+{% endblock %}
