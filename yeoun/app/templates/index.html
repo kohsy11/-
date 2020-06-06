@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 {% block title %} Yeoun {% endblock %}
-{% block content %} {% endblock %}
+{% block content %}
+<h1>안녕</h1>
 {% for leggings in sorted_leggings%}
-{{ leggings.title}}
+<div>
+    {{ leggings.title}}
+</div>
+<div>
+    {{ leggings.price}}
+</div>
+<div>
+    {{ leggings.provider}}
+</div>
+<div>
+    <a href="{{ leggings.link }}" target="_blank"><img src="{{ leggings.img_src }}"></a>
+</div>
+<br>
 {% endfor %}
+
+
+
+
+{% endblock %}
