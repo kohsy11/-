@@ -92,13 +92,18 @@ def com_new(request):
         return redirect('detail', new_post.pk)
     return render(request, 'com_new.html')
 
-def mypage(request, key):
+def mypage(request, mykey):
+    mystyles = Option.objects.filter(user = request.user)
+    posts = Community.objects.filter(author = request.user)
     if request.method == 'POST':
-        option = Option.objects.filter(user = request.user).update(
+        Option.objects.filter(user = request.user).update(
             option1 = request.POST['option1'],
             option2 = request.POST['option2'],
         )
         return redirect('mypage')
-    return render(request, 'mypage.html', {'option' : option } )
+    return render(request, 'mypage.html', {'mystyles' : mystyles , 'posts':posts} )
+
+def search_option(request):
+    return(render, "index.html")
 
 
