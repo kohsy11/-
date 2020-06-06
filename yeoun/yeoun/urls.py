@@ -27,9 +27,9 @@ urlpatterns = [
     path('common/login', views.login, name = 'login'),
     path('common/registration', views.registration, name = 'registration'),
     path('com_list', views.com_list, name = 'com_list'),
-    path('com_detail', views.com_detail, name = 'com_detail'),
+    path('com_detail/<int:key>', views.com_detail, name = 'com_detail'),
     path('com_new', views.com_new, name = 'com_new'),
-    path('mypage', views.mypage, name = 'mypage'),
+    path('mypage/<int:mykey>', views.mypage, name = 'mypage'),
 
 
     
