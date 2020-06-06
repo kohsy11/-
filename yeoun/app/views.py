@@ -18,11 +18,11 @@ def login(request):
         )
         if found_user is None:
             error = 'Incorrect ID or Password'
-            return render(request, 'registration/login.html', {'error': error})
+            return render(request, 'common/login.html', {'error': error})
             
         auth.login(request, found_user, backend = 'django.contrib.auth.backends.ModelBackend')
         return redirect(request.GET.get('next', '/'))
-    return render(request, 'registration/login.html')
+    return render(request, 'common/login.html')
 
 def logout(request):
     auth.logout(request)
