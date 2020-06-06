@@ -1,33 +1,13 @@
-button {
-    padding: 0px;
+html {
+    font-size: 62.5%;
 }
-.black {
-    height: 15px;
-    width: 15px;
-    background-color: black;
-    border-radius: 15px;
-}
-.blue {
-    height: 15px;
-    width: 15px;
-    background-color: lightskyblue;
-    border-radius: 15px;
-}
-.red {
-    height: 15px;
-    width: 15px;
-    background-color: lightpink;
-    border-radius: 15px;
-}
-.white {
-    height: 15px;
-    width: 15px;
-    background-color: beige;
-    border-radius: 15px;
-}
-.gray {
-    height: 15px;
-    width: 15px;
-    background-color: gray;
-    border-radius: 15px;
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
