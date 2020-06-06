@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Community, Comments, Option
+from .models import Community, Comments, Option, Leggings
 import datetime
 from django.contrib.auth.models import User
 from django.contrib import auth
@@ -41,7 +41,12 @@ def registration(request):
     return render(request, 'common/registration.html')
 
 def index(request):
-    return render(request, 'index.html')
+    options = list(Option.objects.filter(user=request.user))
+    latest_option = options[len(options)-1]
+    option_1 = latest_option.option1
+    option_2 = latest_option.option2
+    sorted_leggings = Leggings.objects.filter(feature=option_1).filter(feature=option_2)
+    return render(request, 'index.html',{"sorted_leggings" : sorted_leggings})
 
 def option(request):
     if request.method == 'POST':
